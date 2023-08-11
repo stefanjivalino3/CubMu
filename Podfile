@@ -6,6 +6,7 @@ target 'CubMu' do
   use_frameworks!
 
   # Pods for CubMu
+  pod 'Moya'
 
   target 'CubMuTests' do
     inherit! :search_paths
