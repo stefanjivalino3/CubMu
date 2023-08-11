@@ -1,0 +1,6 @@
+framework module Pods_CubMu_CubMuUITests {
+  umbrella header "Pods-CubMu-CubMuUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
