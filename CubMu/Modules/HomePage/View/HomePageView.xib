@@ -33,18 +33,34 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gwa-5i-FcI">
+                    <rect key="frame" x="0.0" y="766" width="393" height="52"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="OGz-Rv-99k"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Yx-7q-P90">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="jVe-Gs-Ivr"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="gwa-5i-FcI" firstAttribute="bottom" secondItem="jVe-Gs-Ivr" secondAttribute="bottom" id="04s-gC-vg2"/>
+                <constraint firstItem="gwa-5i-FcI" firstAttribute="trailing" secondItem="jVe-Gs-Ivr" secondAttribute="trailing" id="C8L-aa-t7T"/>
                 <constraint firstItem="jVe-Gs-Ivr" firstAttribute="trailing" secondItem="Dz9-SO-Vmm" secondAttribute="trailing" id="Fxp-mq-rPF"/>
                 <constraint firstAttribute="trailing" secondItem="0OG-AN-M68" secondAttribute="trailing" constant="10" id="NkK-MU-M74"/>
                 <constraint firstItem="Dz9-SO-Vmm" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="ZaL-J8-j2F"/>
                 <constraint firstItem="0OG-AN-M68" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aE1-3S-b8b"/>
                 <constraint firstItem="0OG-AN-M68" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nlM-k7-FzL"/>
                 <constraint firstItem="Dz9-SO-Vmm" firstAttribute="top" secondItem="jVe-Gs-Ivr" secondAttribute="top" id="wO0-4T-d2T"/>
+                <constraint firstItem="gwa-5i-FcI" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="wx8-TJ-QVs"/>
             </constraints>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <point key="canvasLocation" x="32.824427480916029" y="54.225352112676056"/>
         </view>
     </objects>
     <resources>
