@@ -6,7 +6,8 @@ target 'CubMu' do
   use_frameworks!
 
   # Pods for CubMu
-  pod 'Moya'
+  pod 'Alamofire'
+  pod 'DGCollectionViewLeftAlignFlowLayout'
 
   target 'CubMuTests' do
     inherit! :search_paths

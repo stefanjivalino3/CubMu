@@ -1,22 +1,20 @@
 PODS:
   - Alamofire (5.7.1)
-  - Moya (15.0.0):
-    - Moya/Core (= 15.0.0)
-  - Moya/Core (15.0.0):
-    - Alamofire (~> 5.0)
+  - DGCollectionViewLeftAlignFlowLayout (1.0.4)
 
 DEPENDENCIES:
-  - Moya
+  - Alamofire
+  - DGCollectionViewLeftAlignFlowLayout
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Moya
+    - DGCollectionViewLeftAlignFlowLayout
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
-  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  DGCollectionViewLeftAlignFlowLayout: a0fa58797373ded039cafba8133e79373d048399
 
-PODFILE CHECKSUM: 5e314f372237298d41c46e143e103c516ebaa453
+PODFILE CHECKSUM: ad0a53416128add7953b14b5f875ed1b9d8473d2
 
 COCOAPODS: 1.12.0

@@ -6,11 +6,41 @@
 //
 
 import Foundation
+import Alamofire
 
 class HomePageService: HomePageServiceProtocol {
-    // Call protocol function
+    
+    func getCategory(onSuccess: @escaping(CategoryModel) -> Void, onFailure: @escaping((Error)) -> ()) {
 
-    func removeThisFuncName(success: @escaping(_ data: HomePageModel) -> (), failure: @escaping() -> ()) {
+        let url = "https://user1673281842743.requestly.dev/getAllCategory"
+        
+        AF.request(
+            url,
+            method: .get,
+            parameters: nil,
+            encoding: URLEncoding.default,
+            headers: nil,
+            interceptor: nil
+        ).response { response in
+            switch response.result {
+            case .success(let data):
+                guard let data = data else {
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(CategoryModel.self, from: data)
+                    onSuccess(result)
+                } catch {
+                    onFailure(error)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
     }
+
+    
 
 }

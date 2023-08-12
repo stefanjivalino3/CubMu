@@ -17,6 +17,8 @@ class HomePageViewModel {
         }
     }
 
+    var categoryData = [CategoryResult]()
+    
     /// Count your data in model
     var count: Int = 0
 
@@ -58,6 +60,9 @@ class HomePageViewModel {
     var internetConnectionStatus: (() -> ())?
     var serverErrorStatus: (() -> ())?
     var didGetData: (() -> ())?
+    
+    var didGetAllCategory: (() -> ())?
+    var didErrorGetAllCategory: (() -> ())?
 
     init(withHomePage serviceProtocol: HomePageServiceProtocol = HomePageService() ) {
         self.service = serviceProtocol
@@ -80,6 +85,29 @@ class HomePageViewModel {
             self.internetConnectionStatus?()
         case .online:
             self.isLoading = false
+        default:
+            break
+        }
+    }
+    
+    func getAllCategory() {
+        switch networkStatus {
+        case .offline:
+            self.isDisconnected = true
+            self.internetConnectionStatus?()
+        case .online:
+            service.getCategory() { [weak self] res in
+                if res.status == false {
+                    self?.didErrorGetAllCategory?()
+                } else {
+                    self?.categoryData = res.result ?? [CategoryResult]()
+                    self?.didGetAllCategory?()
+                }
+            } onFailure: { [weak self] error in
+                guard self != nil else {return}
+                print(error.localizedDescription)
+                self?.didErrorGetAllCategory?()
+            }
         default:
             break
         }

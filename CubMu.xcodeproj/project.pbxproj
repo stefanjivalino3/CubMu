@@ -37,6 +37,7 @@
 		0BA0AD2B2A876B9800D9822D /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AD1B2A876B9800D9822D /* Mulish-Bold.ttf */; };
 		0BA0AD2C2A876B9800D9822D /* Mulish-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AD1C2A876B9800D9822D /* Mulish-ExtraLightItalic.ttf */; };
 		0BA0AD2D2A876B9800D9822D /* Mulish-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AD1D2A876B9800D9822D /* Mulish-SemiBoldItalic.ttf */; };
+		0BA0AD2F2A876E6B00D9822D /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AD2E2A876E6B00D9822D /* UICollectionViewCell+Ext.swift */; };
 		0BAB27E42A8699BD00D394F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB27E32A8699BD00D394F5 /* AppDelegate.swift */; };
 		0BAB27E62A8699BD00D394F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB27E52A8699BD00D394F5 /* SceneDelegate.swift */; };
 		0BAB27E82A8699BD00D394F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB27E72A8699BD00D394F5 /* ViewController.swift */; };
@@ -100,6 +101,7 @@
 		0BA0AD1B2A876B9800D9822D /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mulish-Bold.ttf"; path = "../../../../../../../Downloads/Mulish/static/Mulish-Bold.ttf"; sourceTree = "<group>"; };
 		0BA0AD1C2A876B9800D9822D /* Mulish-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mulish-ExtraLightItalic.ttf"; path = "../../../../../../../Downloads/Mulish/static/Mulish-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		0BA0AD1D2A876B9800D9822D /* Mulish-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mulish-SemiBoldItalic.ttf"; path = "../../../../../../../Downloads/Mulish/static/Mulish-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0BA0AD2E2A876E6B00D9822D /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		0BAB27E02A8699BD00D394F5 /* CubMu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubMu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BAB27E32A8699BD00D394F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BAB27E52A8699BD00D394F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				0B93BFBE2A869CF000B66D9F /* Reach.swift */,
 				0B0521E92A86A6BD005844C1 /* Color+Ext.swift */,
 				0B0521EE2A86AFCB005844C1 /* UIView+Ext.swift */,
+				0BA0AD2E2A876E6B00D9822D /* UICollectionViewCell+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 		0BAB27E22A8699BD00D394F5 /* CubMu */ = {
 			isa = PBXGroup;
 			children = (
+				0BC278A42A877FA6006F2710 /* API */,
 				0B93BFBB2A869CF000B66D9F /* Helpers */,
 				0B93BFBF2A869CF000B66D9F /* Modules */,
 				0B93BFCC2A869CF000B66D9F /* Component */,
@@ -379,6 +383,13 @@
 				0BAB28092A8699BE00D394F5 /* CubMuUITestsLaunchTests.swift */,
 			);
 			path = CubMuUITests;
+			sourceTree = "<group>";
+		};
+		0BC278A42A877FA6006F2710 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		9903A5B561C98787E6638710 /* Frameworks */ = {
@@ -672,6 +683,7 @@
 				0B93BFD32A869CF000B66D9F /* BaseNavigationController.swift in Sources */,
 				0B93BFD62A869CF000B66D9F /* HomePageModel.swift in Sources */,
 				0B93BFDD2A869CF000B66D9F /* HeaderView.swift in Sources */,
+				0BA0AD2F2A876E6B00D9822D /* UICollectionViewCell+Ext.swift in Sources */,
 				0BAB27E62A8699BD00D394F5 /* SceneDelegate.swift in Sources */,
 				0B93BFD72A869CF000B66D9F /* HomePageView.swift in Sources */,
 				0B93BFD52A869CF000B66D9F /* HomePageServiceProtocol.swift in Sources */,
@@ -860,6 +872,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -893,6 +906,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

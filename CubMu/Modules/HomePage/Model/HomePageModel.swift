@@ -11,3 +11,15 @@ struct HomePageModel: Codable {
     
 }
 
+struct CategoryModel: Codable {
+    var result: [CategoryResult]?
+    var status: Bool? = false
+}
+
+struct CategoryResult: Codable {
+    var categoryId:String = ""
+    var categoryName:String = ""
+}
+
+
+
