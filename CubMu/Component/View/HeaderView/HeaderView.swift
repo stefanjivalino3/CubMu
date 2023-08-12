@@ -8,13 +8,22 @@
 import UIKit
 
 class HeaderView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    let kCONTENT_XIB_NAME = "HeaderView"
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
+        contentView.fixInView(self)
+    }
 }

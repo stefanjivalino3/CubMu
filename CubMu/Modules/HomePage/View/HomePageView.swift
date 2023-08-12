@@ -10,7 +10,8 @@ import UIKit
 class HomePageView: UIViewController {
 
     // OUTLETS HERE
-
+    @IBOutlet weak var headerView: HeaderView!
+    
     // VARIABLES HERE
     var viewModel = HomePageViewModel()
 
