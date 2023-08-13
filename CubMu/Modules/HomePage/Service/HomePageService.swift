@@ -69,7 +69,36 @@ class HomePageService: HomePageServiceProtocol {
         }
 
     }
+}
 
+class HomePageMockService: HomePageServiceProtocol {
+    func getCategory(onSuccess: @escaping (CategoryModel) -> Void, onFailure: @escaping ((Error)) -> ()) {
+        let response = CategoryModel(result: [
+            CategoryResult(
+                categoryId: "1",
+                categoryName: "Food"
+            )], status: true
+        )
+        onSuccess(response)
+    }
     
-
+    func getCoupon(onSuccess: @escaping (CouponModel) -> Void, onFailure: @escaping ((Error)) -> ()) {
+        let response = CouponModel(result: [
+            CouponResult(
+                couponId: "1",
+                couponBrandName: "Wendy's",
+                couponBenefitType: "Discount",
+                couponBenefitValue: "20%",
+                couponCategoryId: "1",
+                couponEndDate: "01-01-2020 00:00:00",
+                couponStatus: "active",
+                couponBrandLogo: "www.image.com"
+            )], status: true
+        )
+        onSuccess(response)
+        
+        onSuccess(response)
+    }
+    
+    
 }

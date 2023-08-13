@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RedeemedCouponItem+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RedeemedCouponItem+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:CubMu.xcodeproj">
    </FileRef>
    <FileRef

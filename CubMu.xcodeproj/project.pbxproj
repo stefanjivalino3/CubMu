@@ -55,6 +55,9 @@
 		0BAB27FE2A8699BE00D394F5 /* CubMuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB27FD2A8699BE00D394F5 /* CubMuTests.swift */; };
 		0BAB28082A8699BE00D394F5 /* CubMuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB28072A8699BE00D394F5 /* CubMuUITests.swift */; };
 		0BAB280A2A8699BE00D394F5 /* CubMuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB28092A8699BE00D394F5 /* CubMuUITestsLaunchTests.swift */; };
+		0BB7CC792A893F6300CAE9D6 /* CouponDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB7CC772A893F6300CAE9D6 /* CouponDetailView.xib */; };
+		0BB7CC7A2A893F6300CAE9D6 /* CouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CC782A893F6300CAE9D6 /* CouponDetailView.swift */; };
+		0BB7CC892A895A2200CAE9D6 /* HomePageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CC882A895A2200CAE9D6 /* HomePageTests.swift */; };
 		0BF5456A2A87C45000778652 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF545692A87C45000778652 /* UIImageView+Ext.swift */; };
 		31F590B71BAC4796D55A1E82 /* Pods_CubMu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1455BD62D92A88EB814A362 /* Pods_CubMu.framework */; };
 		AC452DC11C7FD9D549A2845B /* Pods_CubMu_CubMuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2F57EAD24DE435FF9315CD /* Pods_CubMu_CubMuUITests.framework */; };
@@ -131,6 +134,9 @@
 		0BAB28032A8699BE00D394F5 /* CubMuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CubMuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BAB28072A8699BE00D394F5 /* CubMuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubMuUITests.swift; sourceTree = "<group>"; };
 		0BAB28092A8699BE00D394F5 /* CubMuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubMuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BB7CC772A893F6300CAE9D6 /* CouponDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponDetailView.xib; sourceTree = "<group>"; };
+		0BB7CC782A893F6300CAE9D6 /* CouponDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailView.swift; sourceTree = "<group>"; };
+		0BB7CC882A895A2200CAE9D6 /* HomePageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTests.swift; sourceTree = "<group>"; };
 		0BF545692A87C45000778652 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		19707F90BEB210C46FD0C9D5 /* Pods-CubMuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubMuTests.debug.xcconfig"; path = "Target Support Files/Pods-CubMuTests/Pods-CubMuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A26762B978B3EFB56140A54 /* Pods-CubMu-CubMuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubMu-CubMuUITests.debug.xcconfig"; path = "Target Support Files/Pods-CubMu-CubMuUITests/Pods-CubMu-CubMuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +309,7 @@
 		0B93BFCD2A869CF000B66D9F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0BB7CC762A893F6300CAE9D6 /* CouponDetailView */,
 				0B4E968D2A880F1300A9008E /* EmptyStateView */,
 				0B93BFCE2A869CF000B66D9F /* HeaderView */,
 			);
@@ -404,6 +411,7 @@
 				0B93BFBF2A869CF000B66D9F /* Modules */,
 				0B93BFCC2A869CF000B66D9F /* Component */,
 				0BA0AD0B2A876B7800D9822D /* Resource */,
+				0BB7CC7B2A893FE300CAE9D6 /* CoreData */,
 				0BAB27E32A8699BD00D394F5 /* AppDelegate.swift */,
 				0BAB27E52A8699BD00D394F5 /* SceneDelegate.swift */,
 				0BAB27E72A8699BD00D394F5 /* ViewController.swift */,
@@ -420,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				0BAB27FD2A8699BE00D394F5 /* CubMuTests.swift */,
+				0BB7CC882A895A2200CAE9D6 /* HomePageTests.swift */,
 			);
 			path = CubMuTests;
 			sourceTree = "<group>";
@@ -431,6 +440,22 @@
 				0BAB28092A8699BE00D394F5 /* CubMuUITestsLaunchTests.swift */,
 			);
 			path = CubMuUITests;
+			sourceTree = "<group>";
+		};
+		0BB7CC762A893F6300CAE9D6 /* CouponDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				0BB7CC772A893F6300CAE9D6 /* CouponDetailView.xib */,
+				0BB7CC782A893F6300CAE9D6 /* CouponDetailView.swift */,
+			);
+			path = CouponDetailView;
+			sourceTree = "<group>";
+		};
+		0BB7CC7B2A893FE300CAE9D6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0BC278A42A877FA6006F2710 /* API */ = {
@@ -583,6 +608,7 @@
 				0BA0AD232A876B9800D9822D /* Mulish-LightItalic.ttf in Resources */,
 				0BA0AD212A876B9800D9822D /* Mulish-ExtraLight.ttf in Resources */,
 				0BA0AD1E2A876B9800D9822D /* Mulish-MediumItalic.ttf in Resources */,
+				0BB7CC792A893F6300CAE9D6 /* CouponDetailView.xib in Resources */,
 				0BA0AD252A876B9800D9822D /* Mulish-ExtraBold.ttf in Resources */,
 				0B93BFDB2A869CF000B66D9F /* HeaderView.xib in Resources */,
 				0BAB27F02A8699BE00D394F5 /* Assets.xcassets in Resources */,
@@ -743,6 +769,7 @@
 				0B4E968B2A880A8500A9008E /* EmptyStateCell.swift in Sources */,
 				0B93BFD72A869CF000B66D9F /* HomePageView.swift in Sources */,
 				0B93BFD52A869CF000B66D9F /* HomePageServiceProtocol.swift in Sources */,
+				0BB7CC7A2A893F6300CAE9D6 /* CouponDetailView.swift in Sources */,
 				0B93BFDA2A869CF000B66D9F /* HomePageViewModel.swift in Sources */,
 				0BA0AD082A876A2300D9822D /* CategoryView.swift in Sources */,
 			);
@@ -753,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BAB27FE2A8699BE00D394F5 /* CubMuTests.swift in Sources */,
+				0BB7CC892A895A2200CAE9D6 /* HomePageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

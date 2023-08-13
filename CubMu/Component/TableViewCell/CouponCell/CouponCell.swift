@@ -15,6 +15,10 @@ class CouponCell: UITableViewCell {
     @IBOutlet weak var benefitDescLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var redeemButton: UIButton!
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var buttonLabel: UILabel!
+    
+    var didTapButton: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +31,7 @@ class CouponCell: UITableViewCell {
     
     private func setupView() {
         bgView.layer.cornerRadius = 8
-        redeemButton.layer.cornerRadius = 4
-        redeemButton.titleLabel?.font = UIFont(name: "Mulish-SemiBold", size: 12)
+        buttonView.layer.cornerRadius = 4
         
         couponImageView.layer.cornerRadius = 8
         couponImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
@@ -37,8 +40,7 @@ class CouponCell: UITableViewCell {
     
     func configureCell(couponImage: String, couponBrandName: String, couponBenefitType: String, couponBenefitValue: String, couponEndDate: String) {
         
-        let escapeUrl = couponImage.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        couponImageView.showImageFromUrl(url: escapeUrl ?? "")
+        couponImageView.showImageFromUrl(url: couponImage)
         titleLabel.text = couponBrandName
         benefitLabel.text = couponBenefitValue
         if couponBenefitType != "Discount" {
@@ -46,7 +48,39 @@ class CouponCell: UITableViewCell {
         } else {
             benefitDescLabel.isHidden = false
         }
-        dueDateLabel.text = couponEndDate
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "d MMMM yyyy"
+        dateFormatterPrint.locale = Locale(identifier: "id_ID")
+        
+        var endDate = ""
+
+        if let date = dateFormatterGet.date(from: couponEndDate) {
+            endDate = dateFormatterPrint.string(from: date)
+        }
+        
+        dueDateLabel.text = "Promo Sampai \(endDate) "
     }
     
+    func disableButton() {
+        buttonView.backgroundColor = UIColor(rgb: 0xC4C4C4)
+        buttonLabel.textColor = UIColor(rgb: 0xF0F0F0)
+        redeemButton.isUserInteractionEnabled = false
+        
+    }
+    
+    func enableButton() {
+        buttonView.backgroundColor = UIColor(rgb: 0x26D27F)
+        buttonLabel.textColor = .white
+        redeemButton.isUserInteractionEnabled = true
+        
+    }
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        redeemButton.titleLabel?.font = UIFont(name: "Mulish-SemiBold", size: 12)
+        didTapButton?()
+    }
 }

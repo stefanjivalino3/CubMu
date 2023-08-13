@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePageViewModel {
 
@@ -17,8 +18,10 @@ class HomePageViewModel {
         }
     }
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categoryData = [CategoryResult]()
     var couponData = [CouponResult]()
+    var redeemedCoupon = [RedeemedCouponItem]()
     
     /// Count your data in model
     var count: Int = 0
@@ -66,6 +69,8 @@ class HomePageViewModel {
     var didErrorGetAllCategory: (() -> ())?
     var didGetCoupon: (() -> ())?
     var didErrorGetCoupon: (() -> ())?
+    var didGetRedeemedCoupon: (() -> ())?
+    
 
     init(withHomePage serviceProtocol: HomePageServiceProtocol = HomePageService() ) {
         self.service = serviceProtocol
@@ -78,19 +83,6 @@ class HomePageViewModel {
     //MARK: Internet monitor status
     @objc func networkStatusChanged(_ notification: Notification) {
         self.networkStatus = Reach().connectionStatus()
-    }
-
-    //MARK: -- Example Func
-    func exampleBind() {
-        switch networkStatus {
-        case .offline:
-            self.isDisconnected = true
-            self.internetConnectionStatus?()
-        case .online:
-            self.isLoading = false
-        default:
-            break
-        }
     }
     
     func getAllCategory() {
@@ -144,6 +136,26 @@ class HomePageViewModel {
             break
         }
     }
+    
+    func redeemCoupon(couponId: String) {
+        let couponItem = RedeemedCouponItem(context: self.context)
+        couponItem.couponId = couponId
+
+        do {
+            try context.save()
+        } catch {
+
+        }
+    }
+    
+    func getRedeemedCouponData() {
+        do {
+            redeemedCoupon = try context.fetch(RedeemedCouponItem.fetchRequest())
+            didGetRedeemedCoupon?()
+        }
+        catch {}
+    }
+    
 
 }
 

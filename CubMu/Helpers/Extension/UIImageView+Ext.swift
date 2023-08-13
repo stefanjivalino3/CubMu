@@ -10,6 +10,7 @@ import UIKit
 
 extension UIImageView {
     func showImageFromUrl(url: String) {
-        self.kf.setImage(with: URL(string: url))
+        let escapeUrl = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
+        self.kf.setImage(with: URL(string: escapeUrl))
     }
 }

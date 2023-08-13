@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class HomePageView: UIViewController {
 
@@ -28,6 +29,7 @@ class HomePageView: UIViewController {
         
         self.viewModel.getAllCategory()
         self.viewModel.getCoupon(coupunType: 0)
+        self.viewModel.getRedeemedCouponData()
     }
     
     private func setupView() {
@@ -95,6 +97,10 @@ class HomePageView: UIViewController {
             }
             self?.tableView.reloadData()
         }
+        
+        self.viewModel.didGetRedeemedCoupon = { [weak self] in
+            self?.tableView.reloadData()
+        }
 
     }
     
@@ -115,11 +121,38 @@ extension HomePageView: UITableViewDelegate, UITableViewDataSource {
                            couponBenefitValue: viewModel.couponData[indexPath.row].couponBenefitValue,
                            couponEndDate: viewModel.couponData[indexPath.row].couponEndDate)
         
+        cell.didTapButton = {
+            self.viewModel.redeemCoupon(couponId: self.viewModel.couponData[indexPath.row].couponId)
+            let controller = CouponDetailView()
+            controller.couponDetail = self.viewModel.couponData[indexPath.row]
+            
+            let useInlineMode = self.view != nil
+            let sheet = SheetViewController(
+                controller: controller,
+                sizes: [.percent(0.9)],
+                options: SheetOptions(useInlineMode: useInlineMode))
+            sheet.didDismiss = { _ in
+                self.viewModel.getRedeemedCouponData()
+            }
+            
+            if let view = self.view {
+                sheet.animateIn(to: view, in: self)
+            } else {
+                self.present(sheet, animated: true, completion: nil)
+            }
+        }
+        
+        if self.viewModel.redeemedCoupon.contains(where: { $0.couponId == self.viewModel.couponData[indexPath.row].couponId }) == true {
+            cell.disableButton()
+        } else {
+            cell.enableButton()
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 165
     }
 
 
