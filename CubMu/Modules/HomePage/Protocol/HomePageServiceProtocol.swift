@@ -10,5 +10,6 @@ import Foundation
 protocol HomePageServiceProtocol {
     
     func getCategory(onSuccess: @escaping(CategoryModel) -> Void, onFailure: @escaping((Error)) -> ())
+    func getCoupon(onSuccess: @escaping(CouponModel) -> Void, onFailure: @escaping((Error)) -> ())
 
 }

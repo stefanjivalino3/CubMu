@@ -16,9 +16,26 @@ struct CategoryModel: Codable {
     var status: Bool? = false
 }
 
+struct CouponModel: Codable {
+    var result: [CouponResult]?
+    var status: Bool? = false
+}
+
 struct CategoryResult: Codable {
     var categoryId:String = ""
     var categoryName:String = ""
+}
+
+struct CouponResult: Codable {
+    var couponId: String = ""
+    var couponBrandName: String = ""
+    var couponBenefitType: String = ""
+    var couponBenefitValue: String = ""
+    var couponCategoryId: String = ""
+    var couponEndDate: String = ""
+    var couponStatus: String = ""
+    var couponBrandLogo: String = ""
+    
 }
 
 

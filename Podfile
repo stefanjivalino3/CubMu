@@ -8,6 +8,8 @@ target 'CubMu' do
   # Pods for CubMu
   pod 'Alamofire'
   pod 'DGCollectionViewLeftAlignFlowLayout'
+  pod 'FittedSheets'
+  pod 'Kingfisher'
 
   target 'CubMuTests' do
     inherit! :search_paths

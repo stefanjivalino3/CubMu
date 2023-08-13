@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -12,30 +12,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageView" customModule="CubMu" customModuleProvider="target">
             <connections>
                 <outlet property="categoryCollectionViewCell" destination="gwa-5i-FcI" id="ZAq-5h-dbD"/>
+                <outlet property="emptyStateView" destination="hgn-fB-PS5" id="w9X-li-t9S"/>
                 <outlet property="headerView" destination="Dz9-SO-Vmm" id="sJf-XZ-EZq"/>
+                <outlet property="tableView" destination="kVw-Yv-RBL" id="wj9-6w-tTn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dz9-SO-Vmm" customClass="HeaderView" customModule="CubMu" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="59" width="393" height="84"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="84"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="84" id="rG5-8t-qME"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomePage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OG-AN-M68">
-                    <rect key="frame" x="10" y="415.66666666666669" width="373" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gwa-5i-FcI">
-                    <rect key="frame" x="0.0" y="766" width="393" height="52"/>
+                    <rect key="frame" x="0.0" y="810" width="414" height="52"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="OGz-Rv-99k"/>
@@ -47,21 +43,55 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kVw-Yv-RBL">
+                    <rect key="frame" x="0.0" y="232" width="414" height="578"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQj-xL-IEp">
+                    <rect key="frame" x="0.0" y="132" width="414" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benefit Kupon Untuk Kamu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89a-xn-HuT">
+                            <rect key="frame" x="22" y="36.5" width="370" height="27"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="89a-xn-HuT" firstAttribute="leading" secondItem="HQj-xL-IEp" secondAttribute="leading" constant="22" id="2yL-nd-NHa"/>
+                        <constraint firstItem="89a-xn-HuT" firstAttribute="centerY" secondItem="HQj-xL-IEp" secondAttribute="centerY" id="50V-h1-5fH"/>
+                        <constraint firstAttribute="height" constant="100" id="ahL-Db-hAd"/>
+                        <constraint firstAttribute="trailing" secondItem="89a-xn-HuT" secondAttribute="trailing" constant="22" id="sdf-N8-fvV"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-fB-PS5" customClass="EmptyStateView" customModule="CubMu" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="232" width="414" height="578"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="jVe-Gs-Ivr"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gwa-5i-FcI" firstAttribute="bottom" secondItem="jVe-Gs-Ivr" secondAttribute="bottom" id="04s-gC-vg2"/>
+                <constraint firstItem="hgn-fB-PS5" firstAttribute="top" secondItem="HQj-xL-IEp" secondAttribute="bottom" id="1mi-SO-Cgp"/>
+                <constraint firstItem="HQj-xL-IEp" firstAttribute="top" secondItem="Dz9-SO-Vmm" secondAttribute="bottom" id="2so-ue-zZl"/>
                 <constraint firstItem="gwa-5i-FcI" firstAttribute="trailing" secondItem="jVe-Gs-Ivr" secondAttribute="trailing" id="C8L-aa-t7T"/>
                 <constraint firstItem="jVe-Gs-Ivr" firstAttribute="trailing" secondItem="Dz9-SO-Vmm" secondAttribute="trailing" id="Fxp-mq-rPF"/>
-                <constraint firstAttribute="trailing" secondItem="0OG-AN-M68" secondAttribute="trailing" constant="10" id="NkK-MU-M74"/>
+                <constraint firstItem="kVw-Yv-RBL" firstAttribute="top" secondItem="HQj-xL-IEp" secondAttribute="bottom" id="HNg-mm-62M"/>
+                <constraint firstItem="gwa-5i-FcI" firstAttribute="top" secondItem="kVw-Yv-RBL" secondAttribute="bottom" id="HhC-9b-hsz"/>
                 <constraint firstItem="Dz9-SO-Vmm" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="ZaL-J8-j2F"/>
-                <constraint firstItem="0OG-AN-M68" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aE1-3S-b8b"/>
-                <constraint firstItem="0OG-AN-M68" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nlM-k7-FzL"/>
+                <constraint firstItem="gwa-5i-FcI" firstAttribute="top" secondItem="hgn-fB-PS5" secondAttribute="bottom" id="cwU-TX-0L7"/>
+                <constraint firstItem="jVe-Gs-Ivr" firstAttribute="trailing" secondItem="HQj-xL-IEp" secondAttribute="trailing" id="fqk-OU-MMw"/>
+                <constraint firstItem="HQj-xL-IEp" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="hng-f8-y2P"/>
+                <constraint firstItem="hgn-fB-PS5" firstAttribute="trailing" secondItem="jVe-Gs-Ivr" secondAttribute="trailing" id="k3S-q6-Vuz"/>
+                <constraint firstItem="kVw-Yv-RBL" firstAttribute="trailing" secondItem="jVe-Gs-Ivr" secondAttribute="trailing" id="rII-yp-NTc"/>
+                <constraint firstItem="kVw-Yv-RBL" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="swC-oj-Guz"/>
+                <constraint firstItem="hgn-fB-PS5" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="utH-70-cCH"/>
                 <constraint firstItem="Dz9-SO-Vmm" firstAttribute="top" secondItem="jVe-Gs-Ivr" secondAttribute="top" id="wO0-4T-d2T"/>
                 <constraint firstItem="gwa-5i-FcI" firstAttribute="leading" secondItem="jVe-Gs-Ivr" secondAttribute="leading" id="wx8-TJ-QVs"/>
             </constraints>
-            <point key="canvasLocation" x="32.824427480916029" y="54.225352112676056"/>
+            <point key="canvasLocation" x="31.884057971014496" y="53.571428571428569"/>
         </view>
     </objects>
     <resources>

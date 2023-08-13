@@ -18,6 +18,7 @@ class HomePageViewModel {
     }
 
     var categoryData = [CategoryResult]()
+    var couponData = [CouponResult]()
     
     /// Count your data in model
     var count: Int = 0
@@ -63,6 +64,8 @@ class HomePageViewModel {
     
     var didGetAllCategory: (() -> ())?
     var didErrorGetAllCategory: (() -> ())?
+    var didGetCoupon: (() -> ())?
+    var didErrorGetCoupon: (() -> ())?
 
     init(withHomePage serviceProtocol: HomePageServiceProtocol = HomePageService() ) {
         self.service = serviceProtocol
@@ -107,6 +110,35 @@ class HomePageViewModel {
                 guard self != nil else {return}
                 print(error.localizedDescription)
                 self?.didErrorGetAllCategory?()
+            }
+        default:
+            break
+        }
+    }
+    
+    func getCoupon(coupunType: Int) {
+        switch networkStatus {
+        case .offline:
+            self.isDisconnected = true
+            self.internetConnectionStatus?()
+        case .online:
+            service.getCoupon() { [weak self] res in
+                if res.status == false {
+                    self?.didErrorGetAllCategory?()
+                } else {
+                    self?.couponData = res.result ?? [CouponResult]()
+                    
+                    if coupunType > 0 {
+                        self?.couponData = self?.couponData.filter {
+                            $0.couponCategoryId == String(coupunType)
+                        } ?? [CouponResult]()
+                    }
+                    self?.didGetCoupon?()
+                }
+            } onFailure: { [weak self] error in
+                guard self != nil else {return}
+                print(error.localizedDescription)
+                self?.didErrorGetCoupon?()
             }
         default:
             break

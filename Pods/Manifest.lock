@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.7.1)
   - DGCollectionViewLeftAlignFlowLayout (1.0.4)
+  - FittedSheets (2.5.3)
+  - Kingfisher (7.7.0)
 
 DEPENDENCIES:
   - Alamofire
   - DGCollectionViewLeftAlignFlowLayout
+  - FittedSheets
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - DGCollectionViewLeftAlignFlowLayout
+    - FittedSheets
+    - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   DGCollectionViewLeftAlignFlowLayout: a0fa58797373ded039cafba8133e79373d048399
+  FittedSheets: c22df4c06036515f247951fa174912e8a65c8ce4
+  Kingfisher: f043ac666dfc96c1f37604f93effb45a7ee3a3e1
 
-PODFILE CHECKSUM: ad0a53416128add7953b14b5f875ed1b9d8473d2
+PODFILE CHECKSUM: a3c1eac52d1fcf0be466d35d1bf84bdfff87d778
 
 COCOAPODS: 1.12.0
