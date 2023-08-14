@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="bottomBgView" destination="q2Y-Vw-xTL" id="lhJ-hN-lQm"/>
                 <outlet property="brandImageView" destination="y5K-Vk-TfX" id="l5D-jP-2hN"/>
+                <outlet property="buttonView" destination="6UD-5p-jF3" id="CPV-gh-8Y1"/>
                 <outlet property="subtitleLabel" destination="Yzu-me-qpF" id="iqG-ud-VVc"/>
                 <outlet property="timeLabel" destination="XUD-Zf-no0" id="z1N-79-5bh"/>
                 <outlet property="titleLabel" destination="3Ck-oO-u8i" id="XqM-ZT-x8u"/>

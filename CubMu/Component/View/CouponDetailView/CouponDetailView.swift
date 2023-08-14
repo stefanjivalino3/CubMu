@@ -14,6 +14,7 @@ class CouponDetailView: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var buttonView: UIView!
     
     var couponDetail = CouponResult()
 
@@ -33,6 +34,7 @@ class CouponDetailView: UIViewController {
             valueLabel.isHidden = true
         }
         bottomBgView.layer.cornerRadius = 32
+        buttonView.layer.cornerRadius = 12
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"

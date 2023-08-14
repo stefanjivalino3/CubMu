@@ -35,6 +35,7 @@ class CouponCell: UITableViewCell {
         
         couponImageView.layer.cornerRadius = 8
         couponImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        buttonView.layer.cornerRadius = 4
         
     }
     
